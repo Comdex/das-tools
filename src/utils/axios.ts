@@ -1,10 +1,10 @@
 import Axios, { AxiosInstance } from 'axios';
 // import { ElMessage } from 'element-plus'
 
-const baseURL = 'https://mainnet-api.da.systems';
+const baseURL = 'https://das.tools';
 
 const axios: AxiosInstance = Axios.create({
-  //baseURL,
+  baseURL,
   timeout: 20000, // 请求超时 20s
   headers: { 'Content-Type': 'application/json' }
 });

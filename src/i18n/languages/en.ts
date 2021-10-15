@@ -1,6 +1,6 @@
 export const lang = {
   index: {
-    reg_placeholder: "Enter the list of accounts you want to query (separated by space or line break) to batch query",
+    reg_placeholder: "Enter the list of DAS(https://da.systems) accounts you want to query (separated by space or line break) to batch query and register",
     save_history: "Save query history",
     save_history_tips: "Save the list of queries to your browser so you can load the history in the same browser next time",
     load_history: "Load query history",

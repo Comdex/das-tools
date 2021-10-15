@@ -166,6 +166,18 @@
 
              </div>
 
+             <div class="sponsor">
+               <div>
+                 Accelerated & hosted by <div @click="openUrl('https://www.4everland.org')" style="display: inline-block; cursor: pointer; color: yellow">4EVERLAND</div>
+               </div>
+               <n-image
+                   @click="openUrl('https://www.4everland.org')"
+                   width="280"
+                   height="50"
+                   src="/public/4everland.svg"
+                 />
+             </div>
+
 
        </div>
 
