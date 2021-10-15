@@ -174,7 +174,7 @@
                    @click="openUrl('https://www.4everland.org')"
                    width="280"
                    height="50"
-                   src="/public/4everland.svg"
+                   src="/4everland.svg"
                  />
              </div>
 
