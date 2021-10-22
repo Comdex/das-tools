@@ -142,7 +142,7 @@
 					  </template>
 											
                       <div v-else>
-                          <n-tag :color="{textColor: '#b8b8b8'}" size="large" :disabled="disabled"> {{$t('index.not_open')}} </n-tag>
+                          <n-tag :color="{textColor: '#b8b8b8'}" size="large" :disabled="disabled"> {{$t('index.no_reg')}} </n-tag>
                       </div>
 
                    </div>
