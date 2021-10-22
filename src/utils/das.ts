@@ -46,6 +46,12 @@ const inviteCode = "Y9AZJV";
 //   return rst;
 // }
 
+export function getSaleInfo(account: string) : Promise {
+	return axios.post('/bestdas/v1/sell/account/detail', {
+	  account
+	});
+}
+
 export function dasSearch(record : string, requestId : number) : Promise {
   let account : string = record + ".bit";
   let charArray = getCharArray(account);
@@ -67,6 +73,7 @@ export function dasSearch(record : string, requestId : number) : Promise {
            status: -1,
            officialRegUrl: `https://app.da.systems/account/register/${account}?inviter=${inviteAccount}&channel=${inviteAccount}`,
            deNameRegUrl: `https://app.dename.com/register/${account}?inviter=${inviteCode}`,
+		   bestDasUrl: `https://bestdas.com/account/${account}?inviter=${inviteAccount}`,
         };
        console.log(res);
        if(res?.data?.result?.errno == 0) {

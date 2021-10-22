@@ -1,6 +1,6 @@
 export const lang = {
     index: {
-      reg_placeholder: "将你想要查询的DAS(https://da.systems)账号列表(以空格或换行分割)输入即可批量查询注册",
+      reg_placeholder: "将你想要查询的DAS(https://da.systems)账号列表(以空格或换行分割)输入即可批量查询",
       save_history: "保存查询历史",
       save_history_tips: "保存查询列表到浏览器,下次可以在同一浏览器加载历史",
       load_history: "加载查询历史",
@@ -20,5 +20,8 @@ export const lang = {
       save_success: "保存成功",
       load_success: "加载成功",
       no_data: "本地无数据",
+	  on_sale: "卖家报价",
+	  buy: "购买",
+	  no_reg: "不可注册",
     },
 };
