@@ -133,6 +133,14 @@
                       <div v-else-if="item.status === 6">
                           <n-tag :color="{textColor: '#b8b8b8'}" size="large" :disabled="disabled"> {{$t('index.already_reg')}} </n-tag>
                       </div>
+											
+					  <template v-else-if="item.status === 8">
+						  <n-tag type="success" size="large" > {{$t('index.on_sale')}}: {{item.price_ckb}}ckb (${{item.price_usd}}) </n-tag>
+						  <n-button @click="openUrl(item.bestDasUrl)" round type="info">
+						    {{$t('index.buy')}}
+						  </n-button>
+					  </template>
+											
                       <div v-else>
                           <n-tag :color="{textColor: '#b8b8b8'}" size="large" :disabled="disabled"> {{$t('index.not_open')}} </n-tag>
                       </div>
@@ -192,7 +200,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import {dasSearch} from '@/utils/das.ts';
+import {dasSearch, getSaleInfo} from '@/utils/das.ts';
 import { useMessage } from 'naive-ui';
 import { setLanguage } from '@/i18n';
 
@@ -246,7 +254,23 @@ export default defineComponent({
           for(let i = 0; i < wordArray.length; i++) {
             if(wordArray[i] && wordArray[i] != "") {
               dasSearch(wordArray[i], i).then((obj) => {
-                this.results.push(obj);
+				if(obj.status == 8) {
+					getSaleInfo(obj.name).then((res) => {
+						if(res?.data?.err_no == 0) {
+							obj.price_ckb = res.data.data.price_ckb/10e7;
+							obj.price_usd = res.data.data.price_usd;
+							console.log("test:"+JSON.stringify(obj));
+							this.results.push(obj);
+						} else {
+							obj.price_ckb = 0;
+							obj.price_usd = 0;
+							this.results.push(obj);
+						}
+					});
+				} else {
+					this.results.push(obj);
+				}
+                
               });
             }
           }

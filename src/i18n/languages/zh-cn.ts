@@ -20,5 +20,8 @@ export const lang = {
       save_success: "保存成功",
       load_success: "加载成功",
       no_data: "本地无数据",
+	  on_sale: "卖家报价",
+	  buy: "购买",
+	  no_reg: "不可注册",
     },
 };

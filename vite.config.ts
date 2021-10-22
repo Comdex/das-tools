@@ -34,7 +34,13 @@ export default defineConfig({
         changeOrigin: true,
         secure: true,
         rewrite: (path) => path.replace('/api/', '/')
-      }
+      },
+	  '/bestdas': {
+	    target: 'https://tx-api.bestdas.com',
+	    changeOrigin: true,
+	    secure: true,
+	    rewrite: (path) => path.replace('/bestdas/', '/')
+	  },
     },
   }
 })
