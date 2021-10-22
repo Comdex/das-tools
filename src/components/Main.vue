@@ -455,6 +455,8 @@ export default defineComponent({
   border-bottom-color: #efefef;
   word-wrap: break-word;
   word-break: break-all;
+  flex-wrap: wrap;
+  align-content: space-around;
 }
 
 .list-item:hover {
